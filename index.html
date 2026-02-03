@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Journey Through Samoa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="start-screen">
+  <div class="start-overlay">
+    <h2 class="agency">Moana Solace Travel Co.</h2>
+    <h1 class="country">SAMOA</h1>
+    <p class="subtitle">A Pixel Travel Journey</p>
+    <button onclick="startGame()">START JOURNEY ▶️</button>
+  </div>
+</div>
+
+<div id="welcome-screen" class="hidden">
+  <h1 class="welcome-title">Welcome to Samoa 🌺</h1>
+  <p class="welcome-text">Your pixel journey begins...</p>
+</div> 
+
+<div id="game-container" class="hidden">
+  <div class="map-wrapper">
+    <img src="samoa_map.png" id="map">
+  </div> 
+  
+  <div class="game-screen">
+    <div class="checkpoint beach" onclick="showInfo('beach')"></div>
+    <div class="checkpoint trench" onclick="showInfo('trench')"></div>
+    <div class="checkpoint museum" onclick="showInfo('museum')"></div>
+    <div class="checkpoint village" onclick="showInfo('village')"></div>
+    <div class="checkpoint culture" onclick="showInfo('culture')"></div>
+  </div>
+</div> <div id="location-screen" class="hidden">
+  <div id="scene-container">
+    <img src="pixel_tourist.png" id="talking-char"> 
+    <div class="dialogue-box">
+      <h2 id="loc-title">Location Name</h2>
+      <p id="loc-text"></p> 
+      <button class="back-btn" onclick="goBackToMap()">Return to Map 🗺️</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

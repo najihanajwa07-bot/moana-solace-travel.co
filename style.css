@@ -1,0 +1,223 @@
+/* GENERAL PAGE STYLE */
+body {
+  background: #ccefff;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Stops scrolling between screens */
+}
+
+.hidden {
+  display: none !important;
+}
+
+#start-screen {
+  height: 100vh;
+  background-image: url("samoa background.gif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-overlay {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 0 #60a5fa;
+}
+
+.agency {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.country {
+  font-size: 42px;
+  color: #0f766e;
+  margin: 5px 0;
+}
+
+.subtitle {
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+/* START BUTTON */
+#start-screen button {
+  font-family: inherit;
+  font-size: 12px;
+  padding: 10px 20px;
+  background: #facc15;
+  border: 3px solid #ca8a04;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#start-screen button:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+}
+
+
+/* WELCOME SCREEN */
+#welcome-screen {
+  height: 100vh;
+  background-image: url("welcome_samoa_bg.gif");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.welcome-title {
+  font-size: 26px;
+  text-shadow: 2px 2px 0 #000;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+#welcome-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0); 
+}
+
+#welcome-screen * {
+  position: relative;
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GAME CONTAINER */
+#game-container {
+  height: 100vh;
+  width: 100vw;
+  background: #87ceeb;
+  background-color: #5d4037;
+  border: 15px solid #3e2723;
+  outline: 5px solid #000;
+  box-sizing: border-box;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.map-wrapper {
+  width: 100%;   
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 20px #000;
+}
+
+#map {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+  border: 6px solid #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.game-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows you to click "through" the div to the map/icons */
+}
+
+/* 🎮 CIRCULAR RETRO GAME BUTTON */
+.checkpoint {
+  position: absolute;
+  pointer-events: auto;
+  width: 20px;  /* Equal width and height for a circle */
+  height: 20px; 
+  background-color: #facc15; /* Bright Yellow */
+  border: 4px solid #000;
+  border-radius: 50%; /* This makes it a circle */
+  box-shadow: 4px 4px 0px #886600; /* 3D effect */
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s;
+}
+
+/* Hover and Click effects */
+.checkpoint:hover {
+  background-color: #ffe066;
+  transform: scale(1.1);
+}
+
+.checkpoint:active {
+  box-shadow: 0px 0px 0px;
+  transform: translate(4px, 4px);
+}
+
+/* Positioning remains the same */
+.beach { top: 63%; left: 25%; }
+.trench { top: 55%; left: 51%; }
+.museum { top: 64%; left: 63%; }
+.village { top: 21%; left: 68%; }
+.culture { top: 34%; left: 72%; }
+
+#location-screen {
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end; /* Puts the dialogue at the bottom */
+  justify-content: center;
+}
+
+#talking-char {
+  position: absolute;
+  bottom: 30px; /* Sits on top of the box */
+  left: 50px;
+  width: 150px;
+  image-rendering: pixelated;
+  filter: drop-shadow(5px 5px 0px #000);
+}
+
+.dialogue-box {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 4px solid #fff;
+  padding: 25px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: left;
+}
+
+#loc-title {
+  color: #facc15; /* Yellow to match your theme */
+  font-size: 16px;
+  margin: 0 0 10px 0;
+}
+
+#loc-text {
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+}
